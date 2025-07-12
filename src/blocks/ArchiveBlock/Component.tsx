@@ -12,7 +12,15 @@ export const ArchiveBlock: React.FC<
     id?: string
   }
 > = async (props) => {
-  const { id, categories, introContent, limit: limitFromProps, populateBy, selectedDocs , relationTo} = props
+  const {
+    id,
+    categories,
+    introContent,
+    limit: limitFromProps,
+    populateBy,
+    selectedDocs,
+    relationTo,
+  } = props
 
   const limit = limitFromProps || 3
 
@@ -44,12 +52,11 @@ export const ArchiveBlock: React.FC<
     })
     items = fetchedItems.docs
     //posts = fetchedPosts.docs
-   } 
-  else if (populateBy === 'selection') {
+  } else if (populateBy === 'selection') {
     if (selectedDocs?.length) {
-      const filteredSelected = selectedDocs.map((doc) =>
-        typeof doc.value === 'object' ? doc.value : null
-      ).filter(Boolean) as any[]
+      const filteredSelected = selectedDocs
+        .map((doc) => (typeof doc.value === 'object' ? doc.value : null))
+        .filter(Boolean) as any[]
 
       items = filteredSelected
     }
@@ -61,7 +68,7 @@ export const ArchiveBlock: React.FC<
   //     }) as Post[]
 
   //     //posts = filteredSelectedPosts
-      
+
   //   }
   // }
 
@@ -73,8 +80,7 @@ export const ArchiveBlock: React.FC<
         </div>
       )}
       {/* <CollectionArchive posts={items} /> */}
-      <CollectionArchive items={items} relationTo={relationTo} />
-
+      <CollectionArchive items={items} relationTo={relationTo ?? 'posts'} />
     </div>
   )
 }

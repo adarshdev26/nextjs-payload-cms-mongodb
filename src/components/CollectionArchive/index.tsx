@@ -22,13 +22,9 @@ export const CollectionArchive: React.FC<Props> = ({ items, relationTo }) => {
                 <Card className="h-full" doc={item} relationTo="posts" showCategories />
               )}
 
-              {relationTo === 'services' && (
-                <ServiceCard service={item} />
-              )}
+              {relationTo === 'services' && <ServiceCard service={item} />}
 
-{relationTo === 'portfolio' && (
-                <PortfolioCard portfolio={item} />
-              )}
+              {relationTo === 'portfolio' && <PortfolioCard portfolio={item} />}
 
               {/* Add more cases if you have portfolio, team, etc. */}
             </div>
