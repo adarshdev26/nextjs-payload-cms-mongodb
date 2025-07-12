@@ -153,7 +153,7 @@ export interface Page {
   id: string;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'gradientBanner';
     richText?: {
       root: {
         type: string;
@@ -196,7 +196,6 @@ export interface Page {
     media?: (string | null) | Media;
     backgroundColor?: string | null;
   };
-  template: 'default' | 'about' | 'portfolio' | 'services';
   layout: (
     | CallToActionBlock
     | ContentBlock
@@ -1101,7 +1100,6 @@ export interface PagesSelect<T extends boolean = true> {
         media?: T;
         backgroundColor?: T;
       };
-  template?: T;
   layout?:
     | T
     | {

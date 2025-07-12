@@ -72,33 +72,21 @@ export const Pages: CollectionConfig<'pages'> = {
           fields: [hero],
           label: 'Hero',
         },
-        {
-          label: 'Settings',
-          fields: [
-            {
-              name: 'template',
-              label: 'Page Template',
-              type: 'select',
-              required: true,
-              defaultValue: 'default',
-              options: [
-                { label: 'Default', value: 'default' },
-                { label: 'About Page', value: 'about' },
-                { label: 'Portfolio Page', value: 'portfolio' },
-                { label: 'Services Page', value: 'services' },
-              ],
-              admin: {
-                position: 'sidebar',
-              },
-            },
-          ],
-        },
+
         {
           fields: [
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, ImageText, CardsBlock],
+              blocks: [
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                ImageText,
+                CardsBlock,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,
