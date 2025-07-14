@@ -207,12 +207,21 @@ export interface Page {
     | {
         imagePosition: 'left' | 'right';
         image: string | Media;
-        heading: string;
-        description?: string | null;
-        cta?: {
-          text?: string | null;
-          link?: string | null;
-        };
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'imageText';
@@ -1140,14 +1149,7 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               imagePosition?: T;
               image?: T;
-              heading?: T;
               description?: T;
-              cta?:
-                | T
-                | {
-                    text?: T;
-                    link?: T;
-                  };
               id?: T;
               blockName?: T;
             };

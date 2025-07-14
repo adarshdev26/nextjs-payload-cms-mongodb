@@ -21,7 +21,10 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
           <span className="sr-only">Search</span>
           {/* <SearchIcon className="w-5 text-primary" /> */}
         </Link>
-        <button onClick={() => setOpen(true)} className="bg-black text-white rounded-2xl p-3">
+        <button
+          onClick={() => setOpen(true)}
+          className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-2xl p-3"
+        >
           GET A QUOTE
         </button>
         {open && <QuoteModal onClose={() => setOpen(false)} />}

@@ -7,6 +7,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 import RichText from '@/components/RichText'
 import { Button } from '@/components/ui/button'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
+import Image from 'next/image'
 
 import { fields } from './fields'
 import { getClientSideURL } from '@/utilities/getURL'
@@ -114,49 +115,60 @@ export const FormBlock: React.FC<
   )
 
   return (
-    <div className="container lg:max-w-[48rem]">
+    <div className="container lg:max-w-[80rem] mx-auto">
       {enableIntro && introContent && !hasSubmitted && (
         <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
       )}
-      <div className="p-4 lg:p-6 border border-border rounded-[0.8rem]">
-        <FormProvider {...formMethods}>
-          {!isLoading && hasSubmitted && confirmationType === 'message' && (
-            <RichText data={confirmationMessage} />
-          )}
-          {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
-          {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
-          {!hasSubmitted && (
-            <form id={formID} onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-4 last:mb-0">
-                {formFromProps &&
-                  formFromProps.fields &&
-                  formFromProps.fields?.map((field, index) => {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const Field: React.FC<any> = fields?.[field.blockType as keyof typeof fields]
-                    if (Field) {
-                      return (
-                        <div className="mb-6 last:mb-0" key={index}>
-                          <Field
-                            form={formFromProps}
-                            {...field}
-                            {...formMethods}
-                            control={control}
-                            errors={errors}
-                            register={register}
-                          />
-                        </div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start">
+        <div className="rounded-lg overflow-hidden">
+          <Image src="/media/Section-Image-6.jpg" width={526} height={526} alt="image" />
+        </div>
 
-              <Button form={formID} type="submit" variant="default">
-                {submitButtonLabel}
-              </Button>
-            </form>
-          )}
-        </FormProvider>
+        <div className="p-4 lg:p-6 border border-gray-300 rounded-[0.8rem]">
+          <FormProvider {...formMethods}>
+            {!isLoading && hasSubmitted && confirmationType === 'message' && (
+              <RichText data={confirmationMessage} />
+            )}
+            {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
+            {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
+            {!hasSubmitted && (
+              <form id={formID} onSubmit={handleSubmit(onSubmit)}>
+                <div className="mb-4 last:mb-0">
+                  {formFromProps &&
+                    formFromProps.fields &&
+                    formFromProps.fields?.map((field, index) => {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      const Field: React.FC<any> = fields?.[field.blockType as keyof typeof fields]
+                      if (Field) {
+                        return (
+                          <div className="mb-6 last:mb-0" key={index}>
+                            <Field
+                              form={formFromProps}
+                              {...field}
+                              {...formMethods}
+                              control={control}
+                              errors={errors}
+                              register={register}
+                            />
+                          </div>
+                        )
+                      }
+                      return null
+                    })}
+                </div>
+
+                <Button
+                  className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-2xl p-3 w-full text-sm"
+                  form={formID}
+                  type="submit"
+                  variant="default"
+                >
+                  {submitButtonLabel}
+                </Button>
+              </form>
+            )}
+          </FormProvider>
+        </div>
       </div>
     </div>
   )

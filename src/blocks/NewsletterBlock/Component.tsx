@@ -28,7 +28,7 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
   return (
     <section className="bg-[#f7f7f7] py-16 px-4">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold text-blue-800 mb-2">{headline}</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#0963a4] mb-2">{headline}</h2>
         {subtext && <p className="text-sm text-gray-700 mb-8">{subtext}</p>}
 
         {!subscribed ? (
@@ -42,7 +42,7 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
             />
             <button
               onClick={handleSubscribe}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded-full px-8 py-3 transition-all"
+              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white font-semibold rounded-full px-8 py-3 transition-all"
             >
               {buttonLabel}
             </button>

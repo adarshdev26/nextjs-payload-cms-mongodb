@@ -1,4 +1,4 @@
-import { Block } from 'payload';
+import { Block } from 'payload'
 
 const ImageText: Block = {
   slug: 'imageText',
@@ -33,30 +33,10 @@ const ImageText: Block = {
       required: true,
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
       name: 'description',
-      type: 'textarea',
-    },
-    {
-      name: 'cta',
-      type: 'group',
-      label: 'Call to Action',
-      fields: [
-        {
-          name: 'text',
-          type: 'text',
-        },
-        {
-          name: 'link',
-          type: 'text',
-        },
-      ],
+      type: 'richText',
     },
   ],
-};
+}
 
-export default ImageText;
+export default ImageText
