@@ -10,7 +10,7 @@ import {
 
 const AnnouncementBar = () => {
   return (
-    <div className="bg-blue-800 text-white text-sm">
+    <div className="bg-[#0963a4] text-white text-sm">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 py-2">
         {/* Left side: Phone + Email */}
         <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
