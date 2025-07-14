@@ -1,6 +1,7 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 import type { Footer } from '@/payload-types'
 
@@ -14,19 +15,69 @@ export async function Footer() {
   const navItems = footerData?.navItems || []
 
   return (
-    <footer className="mt-auto border-t border-border bg-white dark:bg-card text-white">
-      <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
-        <Link className="flex items-center" href="/">
-          <Logo />
-        </Link>
+    // <footer className="mt-auto border-t border-border bg-white dark:bg-card text-white">
+    //   <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
+    //     <Link className="flex items-center" href="/">
+    //       <Logo />
+    //     </Link>
 
-        <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
-          <ThemeSelector />
-          <nav className="flex flex-col md:flex-row gap-4">
-            {navItems.map(({ link }, i) => {
-              return <CMSLink className="text-black" key={i} {...link} />
-            })}
-          </nav>
+    //     <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
+    //       <ThemeSelector />
+    //       <nav className="flex flex-col md:flex-row gap-4">
+    //         {navItems.map(({ link }, i) => {
+    //           return <CMSLink className="text-black" key={i} {...link} />
+    //         })}
+    //       </nav>
+    //     </div>
+    //   </div>
+    // </footer>
+
+    <footer className="bg-white border-t border-blue-900 py-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-black">
+        {/* Brand + Description */}
+        <div>
+          <Link href="/" className="flex items-center gap-2 mb-4">
+            {/* <Image src="/logo.svg" alt="CodeXstream Logo" width={40} height={40} /> */}
+            <span className="text-xl font-bold text-blue-900">CodeXstream</span>
+          </Link>
+          <p className="text-sm leading-6 text-gray-600">
+            CodeXstream specializes in development and design services. Our team of experts creates
+            custom solutions that help businesses thrive online.
+          </p>
+        </div>
+
+        {/* Useful Links */}
+        <div>
+          <h4 className="text-blue-900 text-lg font-bold mb-4">USEFUL LINKS</h4>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <CMSLink className="hover:text-blue-600 transition-colors" {...item.link} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Office Info */}
+        <div>
+          <h4 className="text-blue-900 text-lg font-bold mb-4">OFFICE</h4>
+          <p className="text-sm text-gray-700 leading-6">
+            Office No.50, D-185
+            <br />
+            Codexstream Phase 8B,
+            <br />
+            Industrial Area, Mohali
+          </p>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h4 className="text-blue-900 text-lg font-bold mb-4">CONTACTS</h4>
+          <p className="text-sm text-gray-700 leading-6">
+            (+91) 172-4000151
+            <br />
+            info@codexstream.com
+          </p>
         </div>
       </div>
     </footer>

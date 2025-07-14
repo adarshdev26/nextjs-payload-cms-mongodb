@@ -74,6 +74,7 @@ export interface Config {
     users: User;
     services: Service;
     portfolio: Portfolio;
+    testimonials: Testimonial;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -92,6 +93,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     portfolio: PortfolioSelect<false> | PortfolioSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -230,6 +232,15 @@ export interface Page {
         id?: string | null;
         blockName?: string | null;
         blockType: 'cards';
+      }
+    | {
+        headline: string;
+        subtext?: string | null;
+        placeholder?: string | null;
+        buttonLabel?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'newsletterblock';
       }
   )[];
   meta?: {
@@ -561,7 +572,7 @@ export interface ArchiveBlock {
     [k: string]: unknown;
   } | null;
   populateBy?: ('collection' | 'selection') | null;
-  relationTo?: ('posts' | 'services' | 'portfolio') | null;
+  relationTo?: ('posts' | 'services' | 'portfolio' | 'testimonials') | null;
   categories?: (string | Category)[] | null;
   limit?: number | null;
   selectedDocs?:
@@ -810,6 +821,18 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  name: string;
+  photo: string | Media;
+  quote: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1010,6 +1033,10 @@ export interface PayloadLockedDocument {
         value: string | Portfolio;
       } | null)
     | ({
+        relationTo: 'testimonials';
+        value: string | Testimonial;
+      } | null)
+    | ({
         relationTo: 'redirects';
         value: string | Redirect;
       } | null)
@@ -1142,6 +1169,16 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     link?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        newsletterblock?:
+          | T
+          | {
+              headline?: T;
+              subtext?: T;
+              placeholder?: T;
+              buttonLabel?: T;
               id?: T;
               blockName?: T;
             };
@@ -1430,6 +1467,17 @@ export interface PortfolioSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  name?: T;
+  photo?: T;
+  quote?: T;
   updatedAt?: T;
   createdAt?: T;
 }

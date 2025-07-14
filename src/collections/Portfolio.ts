@@ -1,5 +1,5 @@
 // collections/Services.ts
-import type { CollectionConfig } from 'payload';
+import type { CollectionConfig } from 'payload'
 
 export const Portfolio: CollectionConfig = {
   slug: 'portfolio',
@@ -22,7 +22,5 @@ export const Portfolio: CollectionConfig = {
       relationTo: 'media',
       required: false,
     },
-
-    
   ],
-};
+}

@@ -3,10 +3,11 @@ import { cn } from '@/utilities/ui'
 import { Card } from '@/components/Card'
 import { ServiceCard } from '../Card/ServiceCard'
 import { PortfolioCard } from '../Card/PortfolioCard'
+import { TestimonialCard } from '../Card/TestimonialCard'
 
 type Props = {
   items: any[]
-  relationTo: 'posts' | 'services' | 'portfolio' // add more as needed
+  relationTo: 'posts' | 'services' | 'portfolio' | 'testimonials' // add more as needed
 }
 
 export const CollectionArchive: React.FC<Props> = ({ items, relationTo }) => {
@@ -25,6 +26,8 @@ export const CollectionArchive: React.FC<Props> = ({ items, relationTo }) => {
               {relationTo === 'services' && <ServiceCard service={item} />}
 
               {relationTo === 'portfolio' && <PortfolioCard portfolio={item} />}
+
+              {relationTo === 'testimonials' && <TestimonialCard testimonial={item} />}
 
               {/* Add more cases if you have portfolio, team, etc. */}
             </div>

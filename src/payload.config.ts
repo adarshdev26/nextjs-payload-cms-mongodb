@@ -13,11 +13,14 @@ import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
 import { Services } from './collections/Services'
 import { Portfolio } from './collections/Portfolio'
+import { Testimonials } from './collections/Testimonials/Testimonials'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+//import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+//import { resendAdapter } from '@payloadcms/email-resend'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -64,7 +67,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Services, Portfolio],
+  collections: [Pages, Posts, Media, Categories, Users, Services, Portfolio, Testimonials],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
@@ -91,4 +94,17 @@ export default buildConfig({
     },
     tasks: [],
   },
+  // email: nodemailerAdapter({
+  //   defaultFromAddress: 'info@payloadcms.com',
+  //   defaultFromName: 'Payload',
+  //   // Nodemailer transportOptions
+  //   transportOptions: {
+  //     host: process.env.SMTP_HOST,
+  //     port: 587,
+  //     auth: {
+  //       user: process.env.SMTP_USER,
+  //       pass: process.env.SMTP_PASS,
+  //     },
+  //   },
+  // }),
 })

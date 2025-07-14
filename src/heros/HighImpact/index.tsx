@@ -8,7 +8,12 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText, backgroundColor }) => {
+export const HighImpactHero: React.FC<Page['hero']> = ({
+  links,
+  media,
+  richText,
+  backgroundColor,
+}) => {
   const { setHeaderTheme } = useHeaderTheme()
 
   useEffect(() => {
@@ -17,7 +22,7 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText,
 
   return (
     <div
-      className="relative -mt-[10.4rem] flex items-center justify-center text-white"
+      className="relative -mt-[5.4rem] flex items-center justify-center text-white"
       data-theme="dark"
       style={{
         background: backgroundColor || '#1e90ff',

@@ -64,6 +64,11 @@ export const Archive: Block = {
           label: 'Portfolio',
           value: 'portfolio',
         },
+
+        {
+          label: 'Testimonials',
+          value: 'testimonials',
+        },
       ],
     },
     {
