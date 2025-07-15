@@ -7,7 +7,7 @@ import type { Footer } from '@/payload-types'
 
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { CMSLink } from '@/components/Link'
-import { Logo } from '@/components/Logo/Logo'
+import logo from '../../src/assets/codexstream.png'
 
 export async function Footer() {
   const footerData: Footer = await getCachedGlobal('footer', 1)()
@@ -37,7 +37,7 @@ export async function Footer() {
         {/* Brand + Description */}
         <div>
           <Link href="/" className="flex items-center gap-2 mb-4">
-            <Image src="/media/codexstream.png" alt="CodeXstream Logo" width={130} height={150} />
+            <Image src={logo} alt="CodeXstream Logo" width={130} height={150} />
             {/* <span className="text-xl font-bold text-[#0963a4]">CodeXstream</span> */}
           </Link>
           <p className="text-sm leading-6 text-[#000]">

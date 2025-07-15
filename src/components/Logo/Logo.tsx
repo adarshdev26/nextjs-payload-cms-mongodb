@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
-
+import logo from '../../../src/assets/codexstream.png'
+import Image from 'next/image'
 interface Props {
   className?: string
   loading?: 'lazy' | 'eager'
@@ -14,16 +15,14 @@ export const Logo = (props: Props) => {
   const priority = priorityFromProps || 'low'
 
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Codesxtream"
-      width={200}
+    <Image
+      alt="Codexstream"
+      src={logo}
+      width={150}
+      height={50}
       loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] h-auto ')}
-      //src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
-      src="/media/codexstream.png"
+      priority={priority === 'high'}
+      className={clsx('max-w-[9.375rem] h-auto', className)}
     />
   )
 }
