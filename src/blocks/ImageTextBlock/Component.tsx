@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
+import defaultImage from '../../../src/assets/about2-bg1(1).png'
 
 type ImageTextBlockProps = {
   imagePosition: 'left' | 'right'
@@ -39,20 +40,17 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
   }
 
   const bgClass = backgroundColor ? backgroundColor : 'bg-transparent'
-
+  console.log(image.url)
   return (
     <section className={`${bgClass} py-12`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 px-4">
         <div className={`md:w-1/2 flex justify-center ${isLeft ? 'order-1' : 'order-2'}`}>
-          {image?.url && (
-            <Image
-              src={image.url}
-              alt={image.alt || 'Image'}
-              width={500}
-              height={400}
-              className="rounded-lg object-cover w-full h-full"
-            />
-          )}
+          <Image src={defaultImage} alt="Default image" width={500} height={300} />
+          {/* {image?.url ? (
+            <Image src={image.url} alt={image.alt || 'Image'} width={500} height={300} />
+          ) : (
+            <Image src={defaultImage} alt="Default image" width={500} height={300} />
+          )} */}
         </div>
         <div className={`md:w-1/2 flex flex-col justify-center ${isLeft ? 'order-2' : 'order-1'}`}>
           {heading && <h2 className={`text-[48px] mb-4 ${variantClasses[variant]}`}>{heading}</h2>}
