@@ -207,6 +207,13 @@ export interface Page {
     | {
         imagePosition: 'left' | 'right';
         image: string | Media;
+        heading?: string | null;
+        bulletPoints?:
+          | {
+              point: string;
+              id?: string | null;
+            }[]
+          | null;
         description?: {
           root: {
             type: string;
@@ -222,12 +229,19 @@ export interface Page {
           };
           [k: string]: unknown;
         } | null;
+        cta?: {
+          text?: string | null;
+          link?: string | null;
+        };
+        variant?: ('default' | 'emphasis' | 'light') | null;
+        backgroundColor?: string | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'imageText';
       }
     | {
         heading: string;
+        textColor?: ('white' | 'black') | null;
         cards: {
           icon?: (string | null) | Media;
           title: string;
@@ -238,6 +252,16 @@ export interface Page {
           text?: string | null;
           link?: string | null;
         };
+        backgroundColor?:
+          | (
+              | '#ffffff'
+              | '#f5f5f5'
+              | '#333333'
+              | '#33a5df'
+              | 'rgba(0,0,0,0.5)'
+              | 'linear-gradient(to right, #0963a4, #33a5df)'
+            )
+          | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'cards';
@@ -250,6 +274,17 @@ export interface Page {
         id?: string | null;
         blockName?: string | null;
         blockType: 'newsletterblock';
+      }
+    | {
+        heading: string;
+        description?: string | null;
+        cta?: {
+          text?: string | null;
+          link?: string | null;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'textblock';
       }
   )[];
   meta?: {
@@ -634,6 +669,7 @@ export interface Portfolio {
  */
 export interface FormBlock {
   form: string | Form;
+  designVariant?: ('default' | 'newsletter' | 'contact') | null;
   enableIntro?: boolean | null;
   introContent?: {
     root: {
@@ -1149,7 +1185,22 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               imagePosition?: T;
               image?: T;
+              heading?: T;
+              bulletPoints?:
+                | T
+                | {
+                    point?: T;
+                    id?: T;
+                  };
               description?: T;
+              cta?:
+                | T
+                | {
+                    text?: T;
+                    link?: T;
+                  };
+              variant?: T;
+              backgroundColor?: T;
               id?: T;
               blockName?: T;
             };
@@ -1157,6 +1208,7 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               heading?: T;
+              textColor?: T;
               cards?:
                 | T
                 | {
@@ -1171,6 +1223,7 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     link?: T;
                   };
+              backgroundColor?: T;
               id?: T;
               blockName?: T;
             };
@@ -1181,6 +1234,20 @@ export interface PagesSelect<T extends boolean = true> {
               subtext?: T;
               placeholder?: T;
               buttonLabel?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textblock?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              cta?:
+                | T
+                | {
+                    text?: T;
+                    link?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -1278,6 +1345,7 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
  */
 export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
+  designVariant?: T;
   enableIntro?: T;
   introContent?: T;
   id?: T;

@@ -37,10 +37,10 @@ export async function Footer() {
         {/* Brand + Description */}
         <div>
           <Link href="/" className="flex items-center gap-2 mb-4">
-            {/* <Image src="/logo.svg" alt="CodeXstream Logo" width={40} height={40} /> */}
-            <span className="text-xl font-bold text-blue-900">CodeXstream</span>
+            <Image src="/media/codexstream.png" alt="CodeXstream Logo" width={130} height={150} />
+            {/* <span className="text-xl font-bold text-[#0963a4]">CodeXstream</span> */}
           </Link>
-          <p className="text-sm leading-6 text-gray-600">
+          <p className="text-sm leading-6 text-[#000]">
             CodeXstream specializes in development and design services. Our team of experts creates
             custom solutions that help businesses thrive online.
           </p>
@@ -48,8 +48,8 @@ export async function Footer() {
 
         {/* Useful Links */}
         <div>
-          <h4 className="text-blue-900 text-lg font-bold mb-4">USEFUL LINKS</h4>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h4 className="text-[#0963a4] text-[20px] font-[500] mb-4">USEFUL LINKS</h4>
+          <ul className="space-y-2 text-sm text-[#000]">
             {navItems.map((item, index) => (
               <li key={index}>
                 <CMSLink className="hover:text-blue-600 transition-colors" {...item.link} />
@@ -60,8 +60,8 @@ export async function Footer() {
 
         {/* Office Info */}
         <div>
-          <h4 className="text-blue-900 text-lg font-bold mb-4">OFFICE</h4>
-          <p className="text-sm text-gray-700 leading-6">
+          <h4 className="text-[#0963a4] text-[20px] font-[500]  mb-4">OFFICE</h4>
+          <p className="text-sm text-[#000] leading-6">
             Office No.50, D-185
             <br />
             Codexstream Phase 8B,
@@ -72,8 +72,8 @@ export async function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h4 className="text-blue-900 text-lg font-bold mb-4">CONTACTS</h4>
-          <p className="text-sm text-gray-700 leading-6">
+          <h4 className="text-[#0963a4] text-[20px] font-[500]  mb-4">CONTACTS</h4>
+          <p className="text-sm text-[#000] leading-6">
             (+91) 172-4000151
             <br />
             info@codexstream.com

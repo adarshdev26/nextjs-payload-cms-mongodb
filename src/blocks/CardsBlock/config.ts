@@ -1,4 +1,4 @@
-import { Block } from 'payload';
+import { Block } from 'payload'
 
 const CardsBlock: Block = {
   slug: 'cards',
@@ -11,6 +11,16 @@ const CardsBlock: Block = {
       name: 'heading',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'textColor',
+      label: 'Text Color',
+      type: 'select',
+      options: [
+        { label: 'Light (white)', value: 'white' },
+        { label: 'Dark (black)', value: 'black' },
+      ],
+      defaultValue: 'black',
     },
     {
       name: 'cards',
@@ -52,7 +62,37 @@ const CardsBlock: Block = {
         },
       ],
     },
-  ],
-};
 
-export default CardsBlock;
+    {
+      name: 'backgroundColor',
+      label: 'Background Color',
+      type: 'select',
+      options: [
+        {
+          label: 'White',
+          value: '#ffffff',
+        },
+        {
+          label: 'Light Gray',
+          value: '#f5f5f5',
+        },
+        {
+          label: 'Dark Gray',
+          value: '#333333',
+        },
+        {
+          label: 'Blue',
+          value: '#33a5df',
+        },
+        {
+          label: 'Transparent Black',
+          value: 'rgba(0,0,0,0.5)',
+        },
+        { label: 'Blue Gradient', value: 'linear-gradient(to right, #0963a4, #33a5df)' },
+      ],
+      defaultValue: '#ffffff',
+    },
+  ],
+}
+
+export default CardsBlock

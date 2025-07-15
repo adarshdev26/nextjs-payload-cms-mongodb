@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import RichText from '@/components/RichText'
+import Link from 'next/link'
 
 type ImageTextBlockProps = {
   imagePosition: 'left' | 'right'
@@ -8,41 +9,77 @@ type ImageTextBlockProps = {
     url?: string
     alt?: string
   }
-  heading: string
+  heading?: string
+  bulletPoints?: { point: string }[]
   description?: any
   cta?: {
     text?: string
     link?: string
   }
-  disableInnerContainer?: boolean
+  variant?: 'default' | 'emphasis' | 'light'
+  backgroundColor?: string
 }
 
 export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
   imagePosition,
   image,
+  heading,
+  bulletPoints = [],
   description,
+  cta,
+  variant = 'default',
+  backgroundColor,
 }) => {
   const isLeft = imagePosition === 'left'
 
+  const variantClasses = {
+    default: 'text-gray-900',
+    emphasis: 'text-blue-800 font-semibold',
+    light: 'text-gray-600',
+  }
+
+  const bgClass = backgroundColor ? backgroundColor : 'bg-transparent'
+
   return (
-    <section className="flex flex-col md:flex-row gap-8 min-h-[400px] max-w-7xl mx-auto">
-      <div
-        className={`md:w-1/2 flex items-center justify-center ${isLeft ? 'order-1' : 'order-2'}`}
-      >
-        {image?.url && (
-          <Image
-            width={400}
-            height={200}
-            src={image.url}
-            alt={image.alt || 'Image'}
-            className="rounded-lg w-full h-full object-cover "
-          />
-        )}
-      </div>
-      <div
-        className={`md:w-1/2 flex flex-col items-center justify-center text-left px-4 ${isLeft ? 'order-2' : 'order-1'}`}
-      >
-        <RichText data={description} enableGutter={false} />
+    <section className={`${bgClass} py-12`}>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 px-4">
+        <div className={`md:w-1/2 flex justify-center ${isLeft ? 'order-1' : 'order-2'}`}>
+          {image?.url && (
+            <Image
+              src={image.url}
+              alt={image.alt || 'Image'}
+              width={500}
+              height={400}
+              className="rounded-lg object-cover w-full h-full"
+            />
+          )}
+        </div>
+        <div className={`md:w-1/2 flex flex-col justify-center ${isLeft ? 'order-2' : 'order-1'}`}>
+          {heading && <h2 className={`text-[48px] mb-4 ${variantClasses[variant]}`}>{heading}</h2>}
+
+          {description && (
+            <div className="mb-4">
+              <RichText data={description} enableGutter={false} />
+            </div>
+          )}
+
+          {bulletPoints?.length > 0 && (
+            <ul className="list-disc pl-5 space-y-2 mb-4 text-[#0d6aaa] font-[600] leading-7">
+              {bulletPoints.map((bp, i) => (
+                <li key={i}>{bp.point}</li>
+              ))}
+            </ul>
+          )}
+
+          {cta?.text && cta.link && (
+            <Link
+              href={cta.link}
+              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] py-5 px-6 w-fit rounded-2xl text-white uppercase"
+            >
+              {cta.text}
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   )

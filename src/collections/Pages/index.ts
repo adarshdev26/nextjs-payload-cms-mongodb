@@ -7,6 +7,7 @@ import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { TextBlock } from '../../blocks/TextBlock/config'
 import { NewsletterBlock } from '../../blocks/NewsletterBlock/config'
 import ImageText from '@/blocks/ImageTextBlock/ImageText'
 import CardsBlock from '@/blocks/CardsBlock/config'
@@ -88,6 +89,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ImageText,
                 CardsBlock,
                 NewsletterBlock,
+                TextBlock,
               ],
               required: true,
               admin: {

@@ -18,6 +18,18 @@ export const FormBlock: Block = {
       required: true,
     },
     {
+      name: 'designVariant',
+      type: 'select',
+      options: [
+        { label: 'Default', value: 'default' },
+        { label: 'Newsletter', value: 'newsletter' },
+        { label: 'Contact', value: 'contact' },
+      ],
+      defaultValue: 'default',
+      label: 'Design Variant',
+    },
+
+    {
       name: 'enableIntro',
       type: 'checkbox',
       label: 'Enable Intro Content',

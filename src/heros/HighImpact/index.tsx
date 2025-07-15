@@ -22,15 +22,15 @@ export const HighImpactHero: React.FC<Page['hero']> = ({
 
   return (
     <div
-      className="relative -mt-[5.4rem] flex items-center justify-center text-white"
+      className="relative -mt-[5.4rem] flex items-center justify-center bg-gradient-to-b from-[#0963a4] to-[#33a5df] text-white"
       data-theme="dark"
-      style={{
-        background: backgroundColor || '#1e90ff',
-      }}
+      // style={{
+      //   background: backgroundColor || '#1e90ff',
+      // }}
     >
       <div className="container mb-8 z-10 relative flex items-center justify-center">
         <div className="max-w-[36.5rem] md:text-center">
-          {richText && <RichText className="mb-6" data={richText} enableGutter={false} />}
+          {richText && <RichText className="mb-6 " data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex md:justify-center gap-4">
               {links.map(({ link }, i) => {

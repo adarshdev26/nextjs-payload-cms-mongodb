@@ -61,6 +61,14 @@ export const ArchiveBlock: React.FC<
       items = filteredSelected
     }
   }
+  const backgroundColorMap: Record<string, string> = {
+    testimonials: 'bg-[#176ca9]',
+    posts: 'bg-[#e0f2fe]',
+    projects: 'bg-[#f3e8ff]',
+    default: 'bg-white',
+  }
+  const bgClass = backgroundColorMap[relationTo || 'default'] || backgroundColorMap.default
+
   // else {
   //   if (selectedDocs?.length) {
   //     const filteredSelectedPosts = selectedDocs.map((post) => {
@@ -73,10 +81,10 @@ export const ArchiveBlock: React.FC<
   // }
 
   return (
-    <div className="my-16" id={`block-${id}`}>
+    <div className={`my-16 py-12  ${bgClass}`} id={`block-${id}`}>
       {introContent && (
-        <div className="container mb-16">
-          <RichText className="ms-0 max-w-[48rem]" data={introContent} enableGutter={false} />
+        <div className="text-center text-white mb-16 container mx-auto px-4">
+          {/* <RichText className="ms-0 max-w-[48rem]  " data={introContent} enableGutter={false} /> */}
         </div>
       )}
       {/* <CollectionArchive posts={items} /> */}

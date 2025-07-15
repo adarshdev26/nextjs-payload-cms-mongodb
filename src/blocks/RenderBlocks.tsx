@@ -10,6 +10,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { ImageTextBlock } from '@/blocks/ImageTextBlock/Component'
 import { CardsBlock } from './CardsBlock/Component'
 import { NewsletterBlock } from '@/blocks/NewsletterBlock/Component'
+import { TextBlock } from '@/blocks/TextBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +21,7 @@ const blockComponents = {
   imageText: ImageTextBlock,
   cards: CardsBlock,
   newsletterblock: NewsletterBlock,
+  textblock: TextBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -18,11 +18,31 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
 }) => {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubscribe = async () => {
-    if (!email) return
-    // Add real API logic or form submit later
-    setSubscribed(true)
+    if (!email) {
+      setError('Email is required')
+      return
+    }
+
+    try {
+      const res = await fetch('/api/forms/687606f777972f6b17333c13/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: 'test@example.com' }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+
+      setSubscribed(true)
+      setError(null)
+    } catch (err) {
+      console.error(err)
+      setError('Something went wrong. Please try again later.')
+    }
   }
 
   return (
@@ -38,8 +58,10 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={placeholder}
+              required
               className="flex-1 px-6 py-3 text-gray-700 focus:outline-none text-base rounded-full"
             />
+
             <button
               onClick={handleSubscribe}
               className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white font-semibold rounded-full px-8 py-3 transition-all"
@@ -50,6 +72,7 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
         ) : (
           <p className="text-green-600 font-medium mt-6">You’ve subscribed successfully!</p>
         )}
+        {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
       </div>
     </section>
   )
