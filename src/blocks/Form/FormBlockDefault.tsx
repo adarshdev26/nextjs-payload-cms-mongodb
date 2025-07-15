@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import RichText from '@/components/RichText'
 import { fields } from './fields'
+import contactImg from '../../../src/assets/contact.jpeg'
 
 export const FormBlockDefault = ({
   formID,
@@ -23,7 +24,7 @@ export const FormBlockDefault = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start">
       <div className="rounded-lg overflow-hidden">
-        <Image src="/media/Section-Image-6.jpg" width={526} height={526} alt="image" />
+        <Image src={contactImg} width={526} height={526} alt="image" />
       </div>
 
       <div className="p-4 lg:p-6 border border-gray-300 rounded-[0.8rem]">

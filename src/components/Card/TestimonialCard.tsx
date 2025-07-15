@@ -1,5 +1,6 @@
 // components/cards/TestimonialCard.tsx
 import Image from 'next/image'
+import defaultImg from '../../../src/assets/team.jpg'
 
 export const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
   const photoUrl =
@@ -9,12 +10,22 @@ export const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
 
   return (
     <div className="rounded-xl border border-[#C0DBF7] p-6 shadow-md h-full flex flex-col justify-between text-center bg-white">
-      {photoUrl && (
+      {photoUrl ? (
         <div className="mx-auto w-24 h-24 rounded-full overflow-hidden mb-4">
           <Image
             width={100}
             height={100}
             src={photoUrl}
+            alt={testimonial.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ) : (
+        <div className="mx-auto w-24 h-24 rounded-full overflow-hidden mb-4">
+          <Image
+            width={100}
+            height={100}
+            src={defaultImg}
             alt={testimonial.name}
             className="w-full h-full object-cover"
           />
