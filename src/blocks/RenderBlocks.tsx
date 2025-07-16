@@ -11,6 +11,8 @@ import { ImageTextBlock } from '@/blocks/ImageTextBlock/Component'
 import { CardsBlock } from './CardsBlock/Component'
 import { NewsletterBlock } from '@/blocks/NewsletterBlock/Component'
 import { TextBlock } from '@/blocks/TextBlock/Component'
+import { MapBlock } from '@/blocks/MapBlock/Component'
+import { TechSkillsBlock } from '@/blocks/TechSkillsBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -22,6 +24,8 @@ const blockComponents = {
   cards: CardsBlock,
   newsletterblock: NewsletterBlock,
   textblock: TextBlock,
+  map: MapBlock,
+  techSkills: TechSkillsBlock,
 }
 
 export const RenderBlocks: React.FC<{

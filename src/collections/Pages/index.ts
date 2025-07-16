@@ -9,8 +9,10 @@ import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { TextBlock } from '../../blocks/TextBlock/config'
 import { NewsletterBlock } from '../../blocks/NewsletterBlock/config'
+import { MapBlock } from '../../blocks/MapBlock/config'
 import ImageText from '@/blocks/ImageTextBlock/ImageText'
 import CardsBlock from '@/blocks/CardsBlock/config'
+import { TechSkillsBlock } from '@/blocks/TechSkillsBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -90,6 +92,8 @@ export const Pages: CollectionConfig<'pages'> = {
                 CardsBlock,
                 NewsletterBlock,
                 TextBlock,
+                MapBlock,
+                TechSkillsBlock,
               ],
               required: true,
               admin: {

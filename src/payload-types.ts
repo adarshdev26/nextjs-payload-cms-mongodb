@@ -287,6 +287,32 @@ export interface Page {
         blockName?: string | null;
         blockType: 'textblock';
       }
+    | {
+        title?: string | null;
+        /**
+         * Paste the iframe src URL from Google Maps Share → Embed a map
+         */
+        embedUrl: string;
+        height?: number | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'map';
+      }
+    | {
+        heading: string;
+        description?: string | null;
+        skills?:
+          | {
+              logo: string | Media;
+              name: string;
+              details?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'techSkills';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1249,6 +1275,31 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     text?: T;
                     link?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        map?:
+          | T
+          | {
+              title?: T;
+              embedUrl?: T;
+              height?: T;
+              id?: T;
+              blockName?: T;
+            };
+        techSkills?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              skills?:
+                | T
+                | {
+                    logo?: T;
+                    name?: T;
+                    details?: T;
+                    id?: T;
                   };
               id?: T;
               blockName?: T;
