@@ -22,12 +22,12 @@ export const FormBlockDefault = ({
   register,
 }: any) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start">
-      <div className="rounded-lg overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start max-w-6xl mx-auto">
+      <div className="rounded-lg overflow-hidden ">
         <Image src={contactImg} width={526} height={526} alt="image" />
       </div>
 
-      <div className="p-4 lg:p-6 border border-gray-300 rounded-[0.8rem]">
+      <div className="p-4 lg:p-6 border border-gray-300 rounded-[0.8rem] ">
         <FormProvider {...formFromProps}>
           {!isLoading && hasSubmitted && confirmationType === 'message' && (
             <RichText data={confirmationMessage} />

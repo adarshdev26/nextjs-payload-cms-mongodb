@@ -179,42 +179,44 @@ export const FormBlock: React.FC<
   // )
 
   return (
-    <div className="container bg-[#f5f5f5]">
-      {enableIntro && introContent && !hasSubmitted && (
-        <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
-      )}
+    <div className="bg-[#f5f5f5]">
+      <div className="">
+        {enableIntro && introContent && !hasSubmitted && (
+          <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
+        )}
 
-      {designVariant === 'newsletter' ? (
-        <FormBlockNewsletter
-          formID={formID}
-          formFromProps={props}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          isLoading={isLoading}
-          hasSubmitted={hasSubmitted}
-          confirmationType={confirmationType}
-          confirmationMessage={confirmationMessage}
-          error={error}
-          control={control}
-          errors={errors}
-          register={register}
-        />
-      ) : (
-        <FormBlockDefault
-          formID={formID}
-          formFromProps={props}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          isLoading={isLoading}
-          hasSubmitted={hasSubmitted}
-          confirmationType={confirmationType}
-          confirmationMessage={confirmationMessage}
-          error={error}
-          control={control}
-          errors={errors}
-          register={register}
-        />
-      )}
+        {designVariant === 'newsletter' ? (
+          <FormBlockNewsletter
+            formID={formID}
+            formFromProps={props}
+            handleSubmit={handleSubmit}
+            onSubmit={onSubmit}
+            isLoading={isLoading}
+            hasSubmitted={hasSubmitted}
+            confirmationType={confirmationType}
+            confirmationMessage={confirmationMessage}
+            error={error}
+            control={control}
+            errors={errors}
+            register={register}
+          />
+        ) : (
+          <FormBlockDefault
+            formID={formID}
+            formFromProps={props}
+            handleSubmit={handleSubmit}
+            onSubmit={onSubmit}
+            isLoading={isLoading}
+            hasSubmitted={hasSubmitted}
+            confirmationType={confirmationType}
+            confirmationMessage={confirmationMessage}
+            error={error}
+            control={control}
+            errors={errors}
+            register={register}
+          />
+        )}
+      </div>
     </div>
   )
 }

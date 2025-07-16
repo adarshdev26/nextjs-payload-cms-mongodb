@@ -25,6 +25,7 @@ export const Number: React.FC<
         )}
       </Label>
       <Input
+        required
         defaultValue={defaultValue}
         id={name}
         type="number"

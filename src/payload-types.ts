@@ -240,8 +240,9 @@ export interface Page {
         blockType: 'imageText';
       }
     | {
-        heading: string;
+        heading?: string | null;
         textColor?: ('white' | 'black') | null;
+        columns?: ('1' | '2' | '3' | '4') | null;
         cards: {
           icon?: (string | null) | Media;
           title: string;
@@ -1209,6 +1210,7 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               heading?: T;
               textColor?: T;
+              columns?: T;
               cards?:
                 | T
                 | {

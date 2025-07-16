@@ -16,11 +16,17 @@ const AnnouncementBar = () => {
         <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-white text-xs" />
-            <span>172-400-0151</span>
+            <span>
+              {' '}
+              <a href="tel:+911724000151">(+91) 172-4000151</a>
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <FaEnvelope className="text-white text-xs" />
-            <span>info@codexstream.com</span>
+            <span>
+              {' '}
+              <a href="mailto:info@codexstream.com"> info@codexstream.com</a>
+            </span>
           </div>
         </div>
 

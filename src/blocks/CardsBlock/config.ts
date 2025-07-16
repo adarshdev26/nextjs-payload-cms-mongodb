@@ -10,7 +10,7 @@ const CardsBlock: Block = {
     {
       name: 'heading',
       type: 'text',
-      required: true,
+      //required: true,
     },
     {
       name: 'textColor',
@@ -22,6 +22,19 @@ const CardsBlock: Block = {
       ],
       defaultValue: 'black',
     },
+    {
+      name: 'columns',
+      label: 'Cards Per Row',
+      type: 'select',
+      options: [
+        { label: '1 Column', value: '1' },
+        { label: '2 Columns', value: '2' },
+        { label: '3 Columns', value: '3' },
+        { label: '4 Columns', value: '4' },
+      ],
+      defaultValue: 3,
+    },
+
     {
       name: 'cards',
       type: 'array',

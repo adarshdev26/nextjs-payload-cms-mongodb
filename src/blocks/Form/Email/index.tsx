@@ -26,6 +26,7 @@ export const Email: React.FC<
         )}
       </Label>
       <Input
+        required
         defaultValue={defaultValue}
         id={name}
         type="text"

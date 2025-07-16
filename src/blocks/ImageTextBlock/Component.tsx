@@ -72,7 +72,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
           {cta?.text && cta.link && (
             <Link
               href={cta.link}
-              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] py-5 px-6 w-fit rounded-2xl text-white uppercase"
+              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] py-3  px-6 w-fit rounded-2xl text-white uppercase"
             >
               {cta.text}
             </Link>
