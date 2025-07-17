@@ -39,6 +39,10 @@ export const hero: Field = {
           label: 'Gradient Banner',
           value: 'gradientBanner',
         },
+        {
+          label: 'BackgroundImage Banner',
+          value: 'backgroundImageBanner',
+        },
       ],
       required: true,
     },
@@ -66,7 +70,8 @@ export const hero: Field = {
       name: 'media',
       type: 'upload',
       admin: {
-        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+        condition: (_, { type } = {}) =>
+          ['highImpact', 'mediumImpact', 'backgroundImageBanner'].includes(type),
       },
       relationTo: 'media',
       required: true,

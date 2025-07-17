@@ -6,12 +6,14 @@ import { HighImpactHero } from '@/heros/HighImpact'
 import { LowImpactHero } from '@/heros/LowImpact'
 import { MediumImpactHero } from '@/heros/MediumImpact'
 import { GradientBannerHero } from './GradientBanner'
+import { BackgrounImageBanner } from './BackgrounImageBanner'
 
 const heroes = {
   highImpact: HighImpactHero,
   lowImpact: LowImpactHero,
   mediumImpact: MediumImpactHero,
   gradientBanner: GradientBannerHero,
+  backgroundImageBanner: BackgrounImageBanner,
 }
 
 export const RenderHero: React.FC<Page['hero']> = (props) => {

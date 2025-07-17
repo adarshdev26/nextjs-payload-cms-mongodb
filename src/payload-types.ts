@@ -155,7 +155,7 @@ export interface Page {
   id: string;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'gradientBanner';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'gradientBanner' | 'backgroundImageBanner';
     richText?: {
       root: {
         type: string;
@@ -312,6 +312,23 @@ export interface Page {
         id?: string | null;
         blockName?: string | null;
         blockType: 'techSkills';
+      }
+    | {
+        textPosition: 'left' | 'right';
+        title: string;
+        subtitle?: string | null;
+        description?: string | null;
+        techStack?:
+          | {
+              logo: string | Media;
+              label?: string | null;
+              link?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'customSoftwareSection';
       }
   )[];
   meta?: {
@@ -1299,6 +1316,24 @@ export interface PagesSelect<T extends boolean = true> {
                     logo?: T;
                     name?: T;
                     details?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        customSoftwareSection?:
+          | T
+          | {
+              textPosition?: T;
+              title?: T;
+              subtitle?: T;
+              description?: T;
+              techStack?:
+                | T
+                | {
+                    logo?: T;
+                    label?: T;
+                    link?: T;
                     id?: T;
                   };
               id?: T;

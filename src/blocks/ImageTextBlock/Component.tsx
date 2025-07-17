@@ -45,12 +45,12 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
     <section className={`${bgClass} py-12`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 px-4">
         <div className={`md:w-1/2 flex justify-center ${isLeft ? 'order-1' : 'order-2'}`}>
-          <Image src={defaultImage} alt="Default image" width={500} height={300} />
-          {/* {image?.url ? (
+          {/* <Image src={defaultImage} alt="Default image" width={500} height={300} /> */}
+          {image?.url ? (
             <Image src={image.url} alt={image.alt || 'Image'} width={500} height={300} />
           ) : (
             <Image src={defaultImage} alt="Default image" width={500} height={300} />
-          )} */}
+          )}
         </div>
         <div className={`md:w-1/2 flex flex-col justify-center ${isLeft ? 'order-2' : 'order-1'}`}>
           {heading && <h2 className={`text-[48px] mb-4 ${variantClasses[variant]}`}>{heading}</h2>}

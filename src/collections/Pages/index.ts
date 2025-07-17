@@ -13,6 +13,7 @@ import { MapBlock } from '../../blocks/MapBlock/config'
 import ImageText from '@/blocks/ImageTextBlock/ImageText'
 import CardsBlock from '@/blocks/CardsBlock/config'
 import { TechSkillsBlock } from '@/blocks/TechSkillsBlock/config'
+import { CustomSoftwareSection } from '@/blocks/SoftwareBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -94,6 +95,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 TextBlock,
                 MapBlock,
                 TechSkillsBlock,
+                CustomSoftwareSection,
               ],
               required: true,
               admin: {

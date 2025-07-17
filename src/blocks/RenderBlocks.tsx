@@ -13,6 +13,7 @@ import { NewsletterBlock } from '@/blocks/NewsletterBlock/Component'
 import { TextBlock } from '@/blocks/TextBlock/Component'
 import { MapBlock } from '@/blocks/MapBlock/Component'
 import { TechSkillsBlock } from '@/blocks/TechSkillsBlock/Component'
+import { CustomSoftwareSection } from '@/blocks/SoftwareBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -26,6 +27,7 @@ const blockComponents = {
   textblock: TextBlock,
   map: MapBlock,
   techSkills: TechSkillsBlock,
+  customSoftwareSection: CustomSoftwareSection,
 }
 
 export const RenderBlocks: React.FC<{
