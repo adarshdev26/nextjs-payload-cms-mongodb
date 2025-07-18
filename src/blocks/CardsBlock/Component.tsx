@@ -44,7 +44,7 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
         <h2 className="mb-12 text-[48px]" style={{ color: textColor }}>
           {heading}
         </h2>
-        <div className={`grid gap-8 ${responsiveGridClass} `}>
+        <div className={`grid gap-8  md:${responsiveGridClass} sm:grid-cols-1 lg:grid-cols-3 `}>
           {cards.map((card, index) => (
             <div
               key={index}
