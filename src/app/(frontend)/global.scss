@@ -1,0 +1,44 @@
+:root {
+    --white: #ffffff;
+    --primary1: #0963a4;
+}
+
+@mixin buttonStyle(){
+    font-size: 14px;
+    background: var(--white);
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: var(--primary1);
+    border: none;
+
+    &:hover {
+        background: var(--primary1) !important;
+        color: var(--white);
+    }
+}
+
+.heroSecHome {
+    h1 {
+        font-weight: 500;
+    }
+
+    p:first-of-type {
+        font-size: 20px;
+        color: var(--white) !important;
+        font-weight: 500;
+        margin-top: 40px;
+    }
+
+    ul {
+        li {
+            a {
+                @include buttonStyle();
+            }
+        }
+    }
+}
+
+// .btnDefault, .btnLink{
+//     @include buttonStyle(); 
+// }
+

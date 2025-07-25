@@ -31,18 +31,18 @@ const AnnouncementBar = () => {
         </div>
 
         {/* Right side: Socials */}
-        <div className="flex items-center gap-2 mt-2 md:mt-0">
+        <div className="flex items-center gap-3 mt-2 md:mt-0">
           <span>Follow Us:</span>
-          <a href="#" aria-label="Facebook">
+          <a href="#" className='text-base' aria-label="Facebook">
             <FaFacebookF className="text-white hover:text-blue-300" />
           </a>
-          <a href="#" aria-label="Instagram">
+          <a href="#" className='text-base' aria-label="Instagram">
             <FaInstagram className="text-white hover:text-blue-300" />
           </a>
-          <a href="#" aria-label="Twitter">
+          <a href="#" className='text-base' aria-label="Twitter">
             <FaTwitter className="text-white hover:text-blue-300" />
           </a>
-          <a href="#" aria-label="LinkedIn">
+          <a href="#" className='text-base' aria-label="LinkedIn">
             <FaLinkedinIn className="text-white hover:text-blue-300" />
           </a>
         </div>

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   h1,
   h2,
@@ -101,3 +100,8 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+body{
+  font-family: 'Montserrat Alternates', sans-serif !important;
+}
+

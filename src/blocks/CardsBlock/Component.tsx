@@ -41,14 +41,14 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
   return (
     <section className="py-11" style={{ background: backgroundColor || '#f5f5f5' }}>
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="mb-12 text-[48px]" style={{ color: textColor }}>
+        <h2 className="mb-12 text-[48px] font-medium" style={{ color: textColor }}>
           {heading}
         </h2>
         <div className={`grid gap-8  md:${responsiveGridClass} sm:grid-cols-1 lg:grid-cols-3 `}>
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#fff] px-[50px] py-[50px] rounded-xl shadow-lg text-center flex flex-col items-center justify-start h-full "
+              className="bg-[#fff] px-[50px] py-[50px] rounded-xl shadow-lg hover:shadow-xl text-center flex flex-col items-center justify-start h-full hover:scale-[1.02] transition-transform duration-300 ease-in-out"
             >
               {card.icon?.url && (
                 <img
@@ -57,7 +57,7 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
                   className="w-16 h-16 object-contain mb-4"
                 />
               )}
-              <h3 className="text-[20px]  text-[#0963a4] mb-[15px]">{card.title}</h3>
+              <h3 className="text-[20px]  text-[#0963a4] mb-[15px] font-medium">{card.title}</h3>
               <p className="text-[#000000] font-[400] text-[15px] leading-[28px]">
                 {card.description}
               </p>
@@ -68,7 +68,7 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
           <div className="mt-12">
             <a
               href={cta?.link}
-              className="inline-block px-6 py-3 bg-gradient-to-b from-[#0963a4] to-[#33a5df] text-white rounded-full hover:bg-blue-600"
+              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] w-fit uppercase hover:from-[#0963a4] hover:to-[#0963a4] text-white rounded-[50px] px-4 py-3 transition-all duration-500 ease-in-out"
             >
               MORE SERVICES
             </a>

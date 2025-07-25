@@ -12,11 +12,11 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="relative">
+    <header className="">
       {/* Desktop Nav */}
-      <nav className="gap-3 items-center hidden md:flex">
+      <nav className="gap-5 items-center hidden md:flex">
         {navItems.map(({ link }, i) => (
-          <CMSLink className="text-black font-bold hover:text-[#0963a4]" key={i} {...link} />
+          <CMSLink className="leading-[40px] pl-[8px] font-bold pr-[8px] text-[#333] uppercase text-left text-[15px] hover:text-[#0963a4] active:text-[#0963a4]" key={i} {...link} />
         ))}
         <Link href="/search">
           <span className="sr-only">Search</span>
@@ -24,7 +24,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
         </Link>
         <button
           onClick={() => setOpen(true)}
-          className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-2xl p-3"
+          className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] hover:from-[#0963a4] hover:to-[#0963a4] text-white rounded-[50px] px-4 py-3 transition-all duration-500 ease-in-out"
         >
           GET A QUOTE
         </button>
@@ -43,7 +43,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-16 w-full bg-white shadow-md flex flex-col items-start px-4 py-6 gap-4 md:hidden z-50">
+        <div className="absolute top-16 left-0 bg-white shadow-md flex flex-col items-start px-4 py-6 gap-4 md:hidden z-50 w-full ">
           {navItems.map(({ link }, i) => (
             <CMSLink className="text-black font-semibold hover:text-[#0963a4]" key={i} {...link} />
           ))}
@@ -55,7 +55,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
               setOpen(true)
               setMenuOpen(false)
             }}
-            className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-2xl p-3 w-full"
+            className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] hover:from-[#0b7aba] hover:to-[#4ab8f5] text-white rounded-[50px] p-3 w-full transition-all duration-500 ease-in-out"
           >
             GET A QUOTE
           </button>

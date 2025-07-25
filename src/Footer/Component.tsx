@@ -59,7 +59,7 @@ export async function Footer() {
             <h4 className="text-[#0963a4] text-[20px] font-[500]  mb-4">CONTACTS</h4>
             <p className="text-[15px] text-[#000] leading-6 ">
               <a className="hover:text-[#0963a4]" href="tel:+911724000151">
-                (+91) 172-4000151
+                (+91) 172-400-0151
               </a>
               <br />
               <a className="hover:text-[#0963a4]" href="mailto:info@codexstream.com">

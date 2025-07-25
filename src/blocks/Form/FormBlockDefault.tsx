@@ -55,7 +55,7 @@ export const FormBlockDefault = ({
               </div>
 
               <Button
-                className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-2xl p-3 w-full text-sm"
+                className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] text-white rounded-[50px] p-3 w-full text-sm hover:bg-[#0b7aba] transition-all duration-500 ease-in-out"
                 form={formID}
                 type="submit"
                 variant="default"

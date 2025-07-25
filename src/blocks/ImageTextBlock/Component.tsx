@@ -56,7 +56,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
           style={{ background: bgClass }}
           className={`md:w-1/2 flex flex-col justify-center ${isLeft ? 'order-2' : 'order-1'}`}
         >
-          {heading && <h2 className={`text-[48px] mb-4 ${variantClasses[variant]}`}>{heading}</h2>}
+          {heading && <h2 className={`text-[48px] mb-4 font-medium ${variantClasses[variant]}`}>{heading}</h2>}
 
           {description && (
             <div className="mb-4">
@@ -75,7 +75,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
           {cta?.text && cta.link && (
             <Link
               href={cta.link}
-              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] py-3  px-6 w-fit rounded-2xl text-white uppercase"
+              className="bg-gradient-to-br from-[#0963a4] to-[#33a5df] w-fit uppercase hover:from-[#0963a4] hover:to-[#0963a4] text-white rounded-[50px] px-4 py-3 transition-all duration-500 ease-in-out"
             >
               {cta.text}
             </Link>

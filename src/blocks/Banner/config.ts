@@ -19,7 +19,7 @@ export const Banner: Block = {
         { label: 'Error', value: 'error' },
         { label: 'Success', value: 'success' },
       ],
-      required: true,
+      required: true, 
     },
     {
       name: 'content',
