@@ -26,6 +26,10 @@ jobs:
 
       - name: Build Payload CMS
         run: pnpm build
+        env:
+            PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+            MONGODB_URI: ${{ secrets.MONGODB_URI }}
+            NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
       - name: Upload Files to EC2
         uses: appleboy/scp-action@master
