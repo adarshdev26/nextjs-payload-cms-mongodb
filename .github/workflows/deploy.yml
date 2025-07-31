@@ -31,6 +31,12 @@ jobs:
             MONGODB_URI: ${{ secrets.MONGODB_URI }}
             NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
+      - name: Check MongoDB URI scheme
+        run: echo "${MONGODB_URI:0:12}"
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
+
       - name: Upload Files to EC2
         uses: appleboy/scp-action@master
         with:
