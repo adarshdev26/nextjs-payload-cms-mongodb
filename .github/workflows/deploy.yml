@@ -25,7 +25,9 @@ jobs:
         run: pnpm install
 
       - name: Build Payload CMS
-        run: pnpm build
+        run: |
+          pnpm build
+          pnpm tsc
         env:
             PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
             DATABASE_URI: ${{ secrets.DATABASE_URI }}
@@ -44,7 +46,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          source: ".next,package.json,public,payload.config.ts,dist,node_modules"
+          source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist,node_modules"
           target: "/home/ubuntu/payload-app"
 
      
