@@ -3,7 +3,8 @@ import Image from 'next/image'
 export const ServiceCard = ({ service }: { service: any }) => {
   return (
     <div className="border rounded-2xl p-8 shadow-2xl text-center ">
-      {typeof service.logo === 'object' && (
+      {/* {typeof service.logo === 'object' && ( */}
+      {service.logo?.url && (
         <Image
           src={service.logo.url}
           alt={service.name}
