@@ -17,7 +17,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({ heading, description, cta 
   return (
     <section className="container mx-auto px-4 py-5">
       <div className="text-center">
-        {heading && <h2 className="text-[36px] mb-[20px]">{heading}</h2>}
+        {heading && <h2 className="text-[48px] mb-[20px]">{heading}</h2>}
         {description && <p className="text-center text-[15px]">{description}</p>}
         {cta?.text && cta?.link && (
           <Link

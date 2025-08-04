@@ -8,7 +8,7 @@ type MapBlockProps = {
 
 export const MapBlock: React.FC<MapBlockProps> = ({ title, embedUrl, height = 400 }) => {
   return (
-    <section className="py-8">
+    <section className="">
       {title && <h2 className="text-2xl font-semibold text-center mb-4">{title}</h2>}
       <div className="w-full">
         <iframe

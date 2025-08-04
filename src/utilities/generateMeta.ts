@@ -26,7 +26,8 @@ export const generateMeta = async (args: {
 
   const ogImage = getImageURL(doc?.meta?.image)
 
-  const title = doc?.meta?.title ? doc?.meta?.title + ' | Codexstream' : 'Codexstream'
+  // const title = doc?.meta?.title ? doc?.meta?.title + ' | Codexstream' : 'Codexstream'
+  const title = 'Codexstream'
 
   return {
     description: doc?.meta?.description,
