@@ -37,4 +37,5 @@ jobs:
             cd /root/payload-app
             pnpm install --prefer-frozen-lockfile
             pnpm build
+            pnpm next build
             pm2 restart payload-app || pm2 start pnpm --name payload-app -- start
