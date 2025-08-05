@@ -40,17 +40,17 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
-          source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist"
+          source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist,node_modules"
           target: "/root/payload-app" 
 
-      - name: SSH into VPS and Start App
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: 22
-          script: |
-            cd /root/payload-app
-            pnpm install
-            pm2 restart payload-app || pm2 start pnpm --name payload-app -- start
+      # - name: SSH into VPS and Start App
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.SERVER_HOST }}
+      #     username: ${{ secrets.SERVER_USERNAME }}
+      #     password: ${{ secrets.SERVER_PASSWORD }}
+      #     port: 22
+      #     script: |
+      #       cd /root/payload-app
+      #       pnpm install
+      #       pm2 restart payload-app || pm2 start pnpm --name payload-app -- start
