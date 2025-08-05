@@ -40,7 +40,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
-          source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist,node_modules"
+          source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist"
           target: "/root/payload-app" 
 
       - name: SSH into VPS and Start App
@@ -53,4 +53,4 @@ jobs:
           script: |
             cd /root/payload-app
             pnpm install
-            pm2 restart payload || pm2 start pnpm --name payload -- start
+            pm2 restart payload-app || pm2 start pnpm --name payload-app -- start
