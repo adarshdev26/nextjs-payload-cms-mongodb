@@ -29,25 +29,28 @@ jobs:
           pnpm build
           pnpm tsc
         env:
-            PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
-            DATABASE_URI: ${{ secrets.DATABASE_URI }}
-            NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-
-      - name: Check MongoDB URI scheme
-        run: echo "${DATABASE_URI:0:12}"
-        env:
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
           DATABASE_URI: ${{ secrets.DATABASE_URI }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
-
-      - name: Upload Files to EC2
+      - name: Upload Files to VPS using SCP
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
-          username: ubuntu
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           source: ".next,package.json,public,tsconfig.json,payload.config.ts,pnpm-lock.yaml,dist,node_modules"
-          target: "/home/ubuntu/payload-app"
+          target: "/home/${{ secrets.SERVER_USERNAME }}/payload-app"
 
-     
-
+      - name: SSH into VPS and Start App
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          script: |
+            cd /home/${{ secrets.SERVER_USERNAME }}/payload-app
+            pnpm install
+            pm2 restart payload || pm2 start pnpm --name payload -- start

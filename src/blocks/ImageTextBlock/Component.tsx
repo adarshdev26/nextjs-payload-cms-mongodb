@@ -54,7 +54,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
         </div>
         <div
           style={{ background: bgClass }}
-          className={`md:w-1/2 flex flex-col justify-center ${isLeft ? 'order-2' : 'order-1'}`}
+          className={`md:w-1/2 flex flex-col justify-center px-10 ${isLeft ? 'order-2' : 'order-1'}`}
         >
           {heading && <h2 className={`text-[48px] mb-4 font-medium ${variantClasses[variant]}`}>{heading}</h2>}
 

@@ -27,9 +27,8 @@ export const CustomSoftwareSection = ({
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-14 items-center ${
-            isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-          }`}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-14 items-center ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+            }`}
         >
           {/* Text Content */}
           <div className={`${isLeft ? 'order-1' : 'order-2'}`}>

@@ -45,11 +45,11 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
         <h2 className="mb-12 text-[48px] font-medium" style={{ color: textColor }}>
           {heading}
         </h2>
-        <div className={`grid gap-8  md:${responsiveGridClass} sm:grid-cols-1 lg:grid-cols-3 `}>
+        <div className={`grid gap-8  md:${responsiveGridClass} sm:grid-cols-1 lg:grid-cols-3`}>
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#fff] px-[50px] py-[50px] rounded-xl shadow-lg hover:shadow-xl text-center flex flex-col items-center justify-start h-full hover:scale-[1.02] transition-transform duration-300 ease-in-out"
+              className="bg-[#fff] w-full max-w-[500px] px-8 py-6 rounded-xl shadow-lg hover:shadow-xl text-center flex flex-col items-center justify-start h-full hover:scale-[1.02] transition-transform duration-300 ease-in-out"
             >
               {card.icon?.url && (
                 <img

@@ -30,7 +30,7 @@ export const TechSkillsBlock: React.FC<TechSkillsBlockProps> = ({
           <div
             key={index}
             onClick={() => setActiveSkill(index)}
-            className={`cursor-pointer p-4 rounded-xl border ${index === activeSkill ? 'bg-blue-100 shadow-md' : 'hover:bg-gray-100'
+            className={`cursor-pointer p-4 rounded-xl  ${index === activeSkill ? 'bg-blue-100 shadow-md' : 'hover:bg-gray-100'
               }`}
           >
             <img
@@ -43,7 +43,7 @@ export const TechSkillsBlock: React.FC<TechSkillsBlockProps> = ({
       </div>
 
       {skills[activeSkill]?.details && (
-        <div className="bg-blue-50 p-6 rounded-lg max-w-4xl mx-auto">
+        <div className="bg-blue-50 p-6 rounded-lg max-w-7xl mx-auto">
           <h3 className="text-xl font-semibold mb-2">{skills[activeSkill].name}</h3>
           <p className="text-gray-700">{skills[activeSkill].details}</p>
         </div>
