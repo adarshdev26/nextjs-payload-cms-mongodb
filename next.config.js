@@ -10,6 +10,7 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 const nextConfig = {
   output: 'standalone',
   images: {
+    unoptimized: true,
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
         const url = new URL(item)
