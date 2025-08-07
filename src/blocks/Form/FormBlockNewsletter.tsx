@@ -26,7 +26,7 @@ export const FormBlockNewsletter = ({
       </h2>
       <p className="text-sm text-gray-600 mb-6">All your information is completely confidential</p>
 
-      <div className=" bg-white shadow-xl px-12 py-5 rounded-full w-full mx-auto max-w-3xl ">
+      <div className=" bg-white shadow-xl px-12 py-5 rounded-full w-full mx-auto max-w-6xl ">
         <FormProvider {...formFromProps}>
           {!isLoading && hasSubmitted && confirmationType === 'message' && (
             <RichText data={confirmationMessage} />
@@ -45,26 +45,27 @@ export const FormBlockNewsletter = ({
                   return Field ? (
                     <div key={index} className="w-full">
                       <Field
+
                         form={formFromProps.form}
                         {...field}
                         {...formFromProps}
                         control={control}
                         errors={errors}
                         register={register}
+
                       />
+                      <Button
+                        className="bg-gradient-to-b from-[#0963a4] to-[#33a5df] hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm mt-4"
+                        form={formID}
+                        type="submit"
+                        variant="default"
+                      >
+                        {formFromProps.form.submitButtonLabel || 'Subscribe'}
+                      </Button>
                     </div>
                   ) : null
                 })}
               </div>
-
-              <Button
-                className="bg-gradient-to-b from-[#0963a4] to-[#33a5df] hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm"
-                form={formID}
-                type="submit"
-                variant="default"
-              >
-                {formFromProps.form.submitButtonLabel || 'Subscribe'}
-              </Button>
             </form>
           )}
         </FormProvider>

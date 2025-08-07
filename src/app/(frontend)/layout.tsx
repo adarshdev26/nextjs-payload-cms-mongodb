@@ -23,7 +23,7 @@ export const metaTags = {
     default: 'Codexstream',
     template: '%s | Codexstream',
   },
-  description: 'Welcome to Codexstream, providing IT solutions',
+  description: 'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -8,7 +8,7 @@ import { getServerSideURL } from './getURL'
 const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
   const serverUrl = getServerSideURL()
 
-  let url = serverUrl + '/website-template-OG.webp'
+  let url = serverUrl + '/codex.png'
 
   if (image && typeof image === 'object' && 'url' in image) {
     const ogUrl = image.sizes?.og?.url
@@ -30,9 +30,13 @@ export const generateMeta = async (args: {
   const title = 'Codexstream'
 
   return {
-    description: doc?.meta?.description,
+    //description: doc?.meta?.description,
+    description:
+      'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
     openGraph: mergeOpenGraph({
-      description: doc?.meta?.description || '',
+      //description: doc?.meta?.description || 'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
+      description:
+        'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
       images: ogImage
         ? [
             {
