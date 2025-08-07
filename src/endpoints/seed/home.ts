@@ -666,7 +666,8 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     ],
     meta: {
-      description: 'An open-source website built with Payload and Next.js.',
+      description:
+        'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
       image: heroImage.id,
       title: 'Codexstream',
     },
