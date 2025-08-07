@@ -7,7 +7,7 @@ const defaultOpenGraph: Metadata['openGraph'] = {
     'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
   images: [
     {
-      url: `${getServerSideURL()}/website-template-OG.webp`,
+      url: `${getServerSideURL()}/codex.png`,
     },
   ],
   siteName: 'Codexstream',
