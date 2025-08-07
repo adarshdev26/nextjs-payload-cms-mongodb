@@ -21,7 +21,7 @@ export const FormBlockNewsletter = ({
 }: any) => {
   return (
     <div className=" px-4 py-12 flex flex-col items-center text-center">
-      <h2 className="text-[48px] text-[#0963a4] font-medium mb-2">
+      <h2 className="text-[38px] text-[#0963a4] font-medium mb-2">
         Subscribe now to Our Newsletter
       </h2>
       <p className="text-sm text-gray-600 mb-6">All your information is completely confidential</p>
