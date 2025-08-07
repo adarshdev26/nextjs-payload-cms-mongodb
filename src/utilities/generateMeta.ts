@@ -26,16 +26,13 @@ export const generateMeta = async (args: {
 
   const ogImage = getImageURL(doc?.meta?.image)
 
-  // const title = doc?.meta?.title ? doc?.meta?.title + ' | Codexstream' : 'Codexstream'
-  const title = 'Codexstream'
+  const title = doc?.meta?.title ? doc?.meta?.title + ' | Codexstream' : 'Codexstream'
 
   return {
-    //description: doc?.meta?.description,
-    description:
-      'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
+    description: doc?.meta?.description,
     openGraph: mergeOpenGraph({
-      //description: doc?.meta?.description || 'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
       description:
+        doc?.meta?.description ||
         'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
       images: ogImage
         ? [
