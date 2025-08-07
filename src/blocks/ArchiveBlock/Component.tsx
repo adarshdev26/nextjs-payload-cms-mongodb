@@ -85,7 +85,7 @@ export const ArchiveBlock: React.FC<
       {introContent && (
         <div className="text-center text-black text-3xl mb-16 container mx-auto px-4">
           {relationTo === 'testimonials' ?
-            <h2 className='text-[48px] text-center text-white'>Testimonials</h2> : (
+            <h2 className='text-[38px] text-center text-white'>Testimonials</h2> : (
               <RichText className="" data={introContent} enableGutter={false} />
             )}
         </div>

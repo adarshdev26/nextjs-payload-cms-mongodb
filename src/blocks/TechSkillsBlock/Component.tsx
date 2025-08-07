@@ -22,7 +22,7 @@ export const TechSkillsBlock: React.FC<TechSkillsBlockProps> = ({
 
   return (
     <section className="py-12 text-center">
-      <h2 className="text-[48px] font-medium mb-4">{heading}</h2>
+      <h2 className="text-[38px] font-medium mb-4">{heading}</h2>
       <p className="text-gray-600 max-w-2xl mx-auto mb-10">{description}</p>
 
       <div className="flex flex-wrap justify-center gap-6 mb-10">

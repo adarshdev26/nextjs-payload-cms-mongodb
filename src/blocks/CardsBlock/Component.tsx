@@ -42,7 +42,7 @@ export const CardsBlock: React.FC<CardsBlockProps> = ({
   return (
     <section className="py-11" style={{ background: backgroundColor || '#f5f5f5' }}>
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="mb-12 text-[48px] font-medium" style={{ color: textColor }}>
+        <h2 className="mb-12 text-[38px] font-medium" style={{ color: textColor }}>
           {heading}
         </h2>
         <div className={`grid gap-8  md:${responsiveGridClass} sm:grid-cols-1 lg:grid-cols-3`}>
