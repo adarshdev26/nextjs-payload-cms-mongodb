@@ -10,7 +10,7 @@ export const PortfolioCard = ({ portfolio }: { portfolio: any }) => {
     <>
       <div
         className="group relative rounded-xl
-       p-4 shadow-md h-screen flex flex-col
+       p-4 shadow-md max-h-[600px] flex flex-col
         justify-between text-center
          bg-white hover:bg-transparent 
          transition-all duration-300
@@ -19,15 +19,15 @@ export const PortfolioCard = ({ portfolio }: { portfolio: any }) => {
       >
         {/* Background Image with Overlay */}
         {typeof portfolio.image === 'object' && (
-          <div className="relative w-full h-full">
+          <div className="relative ">
             <img
               src={portfolio.image.url}
               alt={portfolio.name}
-              className="w-full h-full object-cover rounded-lg transition-all duration-300  group-hover:scale-105"
+              className=" object-cover rounded-lg transition-all duration-300  group-hover:scale-105"
             />
 
             {/* Blue Overlay */}
-            <div className="absolute inset-0 bg-[#0597d5] opacity-0 group-hover:opacity-70 transition-all duration-300 rounded-lg"></div>
+            {/* <div className="absolute inset-0 bg-[#0597d5] opacity-0 group-hover:opacity-70 transition-all duration-300 rounded-lg"></div> */}
 
             {/* Plus Icon */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -48,15 +48,17 @@ export const PortfolioCard = ({ portfolio }: { portfolio: any }) => {
       {/* Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[999999]"
+          className="fixed inset-0 bg-black bg-opacity-60 flex  justify-center z-[999999] overflow-y-auto"
           style={{ width: '100%', height: '100%' }}
         >
-          <div className="bg-white rounded-xl max-w-3xl w-full p-6 relative shadow-xl text-center">
+
+
+          <div className="bg-white rounded-xl  max-w-5xl  h-fit p-6 relative shadow-xl text-center top-20">
             <h2 className="text-2xl font-semibold mb-4 text-[#0963a4]">{portfolio.name}</h2>
             <img
               src={portfolio.image.url}
               alt={portfolio.image.alt || portfolio.name}
-              className="max-h-[70vh] mx-auto mb-6 rounded-lg"
+              className="   mb-6 rounded-lg"
             />
             <button
               onClick={() => setIsOpen(false)}
