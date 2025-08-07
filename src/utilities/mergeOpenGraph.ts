@@ -3,7 +3,8 @@ import { getServerSideURL } from './getURL'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'An open-source website built with Payload and Next.js.',
+  description:
+    'CodeXstream offers expert IT solutions and services in Mohali and Chandigarh. Discover innovative solutions for your business.',
   images: [
     {
       url: `${getServerSideURL()}/website-template-OG.webp`,
